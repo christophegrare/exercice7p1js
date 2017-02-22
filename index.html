@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice_7</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <label for="pointure">Pointure : </label><input type="text" id="pointure" name="pointure"/><br/>
+    <label for="annee">Année de naissance : </label><input type="text" id="annee" name="annee"/><br/>
+    <button id="valider" name="valider">Valider</button>
+  </form>
+  <!--  Demander à l’utilisateur sa pointure et son année de naissance.
+  Créer une fonction qui fait les calculs suivants :
+
+  Multiplier la pointure par 2
+  Ajouter 5 au résultat
+  Multiplier le tout par 50
+  Soustraire l’année de naissance
+  Ajouter au tout 1766
+
+  La fonction doit retourner le résultat. Tester avec votre date de naissance et votre pointure.
+  Attention : n'utiliser une seule variable « resultat ».-->
+  <script>
+  document.getElementById('valider').addEventListener('click',function(){
+  var solution = cal();
+  alert(solution);
+});
+  //apel de la fonction du html
+  function cal(){
+    //recuperation des valeur
+    var shoeSize = document.getElementById('pointure').value;
+    var year = document.getElementById('annee').value;
+    //il faut des nombres
+    if (isNaN(shoeSize) || isNaN(year) || shoeSize == '' || year == ''){
+      alert('Il faut des nombres');
+      //demander les calcules par des ()
+    } else {
+      var result = (((((shoeSize * 2) + 5) * 50) - year) + 1766);
+    }
+    return result;
+  }
+
+  </script>
+</body>
+</html>
